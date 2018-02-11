@@ -2,6 +2,7 @@ package com.lancoder.ttb.bottomnavigationdemo;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.Toast;
 
 import com.lancoder.ttb.bottomnavigation.view.BottomNavigationView;
@@ -46,7 +47,7 @@ public class MainActivity extends AppCompatActivity {
         mBottomNavigationView.setOnItemSelectListner(new BottomNavigationView.OnItemSelectListner() {
             @Override
             public void selectItem(int position) {
-                Toast.makeText(MainActivity.this,position+"",Toast.LENGTH_SHORT);
+                Toast.makeText(MainActivity.this,position+" Position",Toast.LENGTH_LONG).show();
             }
         });
     }

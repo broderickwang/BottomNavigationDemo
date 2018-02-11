@@ -91,11 +91,12 @@ public class BottomNavigationView extends LinearLayout {
                     mCurrentIndex = position;
                     mBottomViewItems.get(mCurrentIndex).setSelected(true);
                 }
+                if(mOnItemSelectListner !=null){
+                    mOnItemSelectListner.selectItem(position);
+                }
             }
         });
-        if(mOnItemSelectListner !=null){
-            mOnItemSelectListner.selectItem(position);
-        }
+
     }
 
     public void setOnItemSelectListner(OnItemSelectListner onItemSelectListner) {
