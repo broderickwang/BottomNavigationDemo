@@ -29,6 +29,8 @@ public class BottomNavigationView extends LinearLayout {
      */
     private int mCurrentIndex = -1;
 
+    private OnItemSelectListner mOnItemSelectListner;
+
     public BottomNavigationView(Context context) {
         this(context,null);
     }
@@ -91,5 +93,16 @@ public class BottomNavigationView extends LinearLayout {
                 }
             }
         });
+        if(mOnItemSelectListner !=null){
+            mOnItemSelectListner.selectItem(position);
+        }
+    }
+
+    public void setOnItemSelectListner(OnItemSelectListner onItemSelectListner) {
+        mOnItemSelectListner = onItemSelectListner;
+    }
+
+    public interface OnItemSelectListner {
+        void selectItem(int position);
     }
 }

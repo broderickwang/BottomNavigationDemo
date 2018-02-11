@@ -2,6 +2,7 @@ package com.lancoder.ttb.bottomnavigationdemo;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.widget.Toast;
 
 import com.lancoder.ttb.bottomnavigation.view.BottomNavigationView;
 import com.lancoder.ttb.bottomnavigation.item.BottomViewItem;
@@ -42,5 +43,11 @@ public class MainActivity extends AppCompatActivity {
                 .textColor(R.color.tab_color)
                 .icon(R.drawable.tab_icon).bulid());
         mBottomNavigationView.addItems(iterator);
+        mBottomNavigationView.setOnItemSelectListner(new BottomNavigationView.OnItemSelectListner() {
+            @Override
+            public void selectItem(int position) {
+                Toast.makeText(MainActivity.this,position+"",Toast.LENGTH_SHORT);
+            }
+        });
     }
 }
